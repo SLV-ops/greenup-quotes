@@ -11,7 +11,7 @@ STOCKS = {  # clé du site: (symbole Yahoo, symbole Alpha Vantage, devise)
     "ONT":   ("ONT",      "ONT",       "USD"),   # Onterris, NYSE
     "VIE":   ("VIE.PA",   "VIE.PAR",   "EUR"),   # Veolia, Euronext Paris
     "SCHP":  ("SCHP.PA",  "SCHP.PAR",  "EUR"),   # Séché Environnement, Euronext Paris
-    "LAT1V": ("LAT1V.HE", "LAT1V.HEL", "EUR"),   # Lassila & Tikanoja, Nasdaq Helsinki
+    "LAT1V": ("LASTIK.HE", "LASTIK.HEL", "EUR"),   # Lassila & Tikanoja (code LASTIK)
     "SDV":   ("SDV.AX",   "SDV.AX",    "AUD"),   # SciDev, ASX
 }
 FX = {"EURUSD": ("EURUSD=X", ("EUR", "USD")), "EURAUD": ("EURAUD=X", ("EUR", "AUD"))}
