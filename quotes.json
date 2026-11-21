@@ -1,11 +1,52 @@
 {
  "q": {
-  "ONT": {"p": 21.69, "d": "2026-11-20", "src": "initial", "c": "USD"},
-  "SCHP": {"p": 77.6, "d": "2026-11-05", "src": "initial", "c": "EUR"},
-  "LAT1V": {"p": 6.28, "d": "2026-10-30", "src": "initial", "c": "EUR"},
-  "SDV": {"p": 0.145, "d": "2026-11-02", "src": "initial", "c": "AUD"}
+  "ONT": {
+   "p": 21.69,
+   "d": "2026-11-20",
+   "src": "yahoo",
+   "c": "USD"
+  },
+  "SCHP": {
+   "p": 80.0,
+   "d": "2026-11-20",
+   "src": "yahoo",
+   "c": "EUR"
+  },
+  "LAT1V": {
+   "p": 6.28,
+   "d": "2026-10-30",
+   "src": "initial",
+   "c": "EUR"
+  },
+  "SDV": {
+   "p": 0.16,
+   "d": "2026-11-20",
+   "src": "yahoo",
+   "c": "AUD"
+  },
+  "VIE": {
+   "p": 33.75,
+   "d": "2026-11-20",
+   "src": "yahoo",
+   "c": "EUR"
+  }
  },
- "fx": {},
- "updated": "2026-11-21T16:00:00Z",
- "notes": ["Fichier initial ; le premier relevé automatique le complète."]
+ "fx": {
+  "EURUSD": {
+   "p": 1.097,
+   "d": "2026-11-20",
+   "src": "yahoo"
+  },
+  "EURAUD": {
+   "p": 1.6569,
+   "d": "2026-11-21",
+   "src": "yahoo"
+  }
+ },
+ "updated": "2026-11-21T15:36:35Z",
+ "notes": [
+  "LAT1V: yahoo indisponible (Yahoo LAT1V.HE: HTTP Error 404: Not Found)",
+  "LAT1V: alphavantage indisponible (pas de clé Alpha Vantage)",
+  "LAT1V: dernier cours conservé (2026-10-30)"
+ ]
 }
