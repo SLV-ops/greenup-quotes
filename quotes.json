@@ -13,9 +13,9 @@
    "c": "EUR"
   },
   "LAT1V": {
-   "p": 6.28,
-   "d": "2026-10-30",
-   "src": "initial",
+   "p": 6.46,
+   "d": "2026-11-20",
+   "src": "yahoo",
    "c": "EUR"
   },
   "SDV": {
@@ -43,10 +43,6 @@
    "src": "yahoo"
   }
  },
- "updated": "2026-11-21T15:36:35Z",
- "notes": [
-  "LAT1V: yahoo indisponible (Yahoo LAT1V.HE: HTTP Error 404: Not Found)",
-  "LAT1V: alphavantage indisponible (pas de clé Alpha Vantage)",
-  "LAT1V: dernier cours conservé (2026-10-30)"
- ]
+ "updated": "2026-11-21T15:47:48Z",
+ "notes": []
 }
