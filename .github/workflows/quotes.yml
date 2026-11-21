@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -22,8 +24,13 @@ jobs:
         run: python fetch_quotes.py
       - name: Enregistrer quotes.json
         run: |
+          cp quotes.json /tmp/quotes.json
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git reset --hard origin/main
+          cp /tmp/quotes.json quotes.json
           git add quotes.json
-          git diff --staged --quiet || git commit -m "Cours de clôture $(date -u +%F)"
-          git push
+          git diff --staged --quiet && exit 0
+          git commit -m "Cours de clôture $(date -u +%F)"
+          git push origin HEAD:main
