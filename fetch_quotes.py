@@ -31,9 +31,16 @@ def yahoo(sym):
         try:
             j = get_json(f"https://{host}.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(sym)}?range=5d&interval=1d")
             r = j["chart"]["result"][0]
-            off = r["meta"].get("gmtoffset", 0) or 0
-            pairs = [(t, c) for t, c in zip(r["timestamp"], r["indicators"]["quote"][0]["close"]) if c]
-            t, c = pairs[-1]
+            m = r["meta"]
+            off = m.get("gmtoffset", 0) or 0
+            ts = r.get("timestamp") or []
+            cl = ((r.get("indicators") or {}).get("quote") or [{}])[0].get("close") or []
+            pairs = [(t, c) for t, c in zip(ts, cl) if c]
+            # Dernier cours de marché : il couvre la dernière séance même quand la
+            # bougie journalière n'est pas encore complétée (cas des places européennes).
+            if m.get("regularMarketPrice") and m.get("regularMarketTime"):
+                pairs.append((m["regularMarketTime"], m["regularMarketPrice"]))
+            t, c = max(pairs, key=lambda x: x[0])
             d = datetime.datetime.fromtimestamp(t + off, datetime.timezone.utc).date().isoformat()
             return round(float(c), 4), d
         except Exception as e:  # noqa: BLE001
